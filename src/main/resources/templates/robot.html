@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<meta charset="ISO-8859-1">
+<title>Seguridad</title>
+</head>
+<body>
+	<h1 class="bg-dark">Eres un robot?</h1>
+	<form th:action="@{/seguridad}" th:object="${robot}" method="post">
+		<div class="form-group">
+			<div class="sec1">
+				<label class="tma">Marcar solo si usted es un robot </label>
+				<input class="sradio" type="radio" th:field="*{soyRobot}" th:value="${false}"><br>
+				<span class="tma" th:errors="*{soyRobot}" style="color: #FF0000"></span><br>
+			</div>
+			<div class="btn-group btn-group-lg" role="group"><input class="btn btn-primary btn-group-lg" type="submit" value="Aceptar"/></div>
+		</div>
+	</form>
+	<a class="ref" href="/producto">Regresar</a>
+</body>
+</html>
